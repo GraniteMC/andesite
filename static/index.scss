@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap');
+
+$raisin-black: #272727ff;
+$raspberry: #d81e5bff;
+$raspberry2:rgb(218, 65, 116)f;
+$cool-gray: #9a94bcff;
+$cool-gray-trans: #9a94bcbb;
+$ice-blue: #9bf3f0ff;
+$ice-blue-light: rgba(145, 192, 190, 0.776);
+$french-violet: #6622ccff;
+$french-violet-trans: #6622ccbb;
+$text: #d1d1d1;
+
+.blur {
+    filter: blur(8px);
+    z-index: 1;
+
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url('./bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position : center;
+    background-attachment: fixed;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inclusive Sans', sans-serif;
+    color: $text;
+
+    margin: 25px;
+    min-height: 100%;
+
+    nav {
+        z-index: 10;
+
+        height: 100px;
+        width: 100%;
+
+        background-color: $french-violet-trans;
+    }
+
+    main {
+        position: relative;
+        z-index: 5;
+
+        width: 100%;
+        height: 100vh;
+
+        text-align: center;
+
+        
+
+        #mainregion {
+            height: 100vh;
+        
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            #file {
+
+                width: 25em;
+                height: 10em;
+                border-radius: 2em;
+                
+                background-color: $cool-gray-trans;
+
+                display: flex;
+
+                justify-content: center;
+                align-items: center;
+
+                flex-wrap: wrap;
+
+                #files {
+                    width: 80%;
+                    height: 4em;
+                    border-radius: 1em;
+                    
+                    background-color: $cool-gray-trans;
+
+                    line-height: 4em;
+                    
+                    &:hover {
+                        filter: brightness(0.7);
+                    }
+                    
+
+                    label, a {
+                        width: 100%;
+                        height: 100%;
+
+                        position: relative;
+
+                        float: left;
+
+                        #upload_file {
+                            color: transparent;
+                            
+                            width: 5em;
+                            overflow: hidden;   
+                        }
+
+                        a {
+                            font-size: 0.8em;
+                            text-decoration: none;
+                            
+                            color: $french-violet;
+                        }
+                    }
+
+
+                }
+
+                #file_upload_button {
+                    background-color: $ice-blue-light;
+                    border-radius: 1em;
+
+                    width: 7em;
+                    height: 3em;
+
+                    outline: none;
+                    border: none;
+
+                    &:hover {
+                        filter: brightness(0.7);
+                    }
+
+                    cursor:pointer;
+                }
+
+            }
+        }
+
+    }
+}
