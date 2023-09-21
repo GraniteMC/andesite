@@ -4,6 +4,7 @@ from watchdog.events import FileSystemEventHandler
 
 parser = argparse.ArgumentParser(description='Some scripts for packed')
 parser.add_argument('--scss', '-c', '--css', action='store_true', help='compile scss to css')
+parser.add_argument('--js', '-c', '--css', action='store_true', help='compile ts to js')
 parser.add_argument('--csswatch', '-w', action='store_true', help='watch css')
 parser.add_argument('--ts', '-t', action='store_true', help='watch ts')
 
@@ -12,6 +13,16 @@ if args.scss:
 
     cmds = [
         'sass static/index.scss static/index.css'
+    ]
+
+    for cmd in cmds:
+        print(f'Compiling {cmd.split(" ")[1]}')
+        os.system(cmd)
+
+if args.js:
+
+    cmds = [
+        'tsc static/index.ts'
     ]
 
     for cmd in cmds:
